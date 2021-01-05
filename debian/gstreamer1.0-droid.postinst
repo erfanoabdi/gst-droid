@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+# Doesn't do anything, but source debconf to make sure config script is run.
+# http://www.fifi.org/doc/debconf-doc/tutorial.html
+. /usr/share/debconf/confmodule

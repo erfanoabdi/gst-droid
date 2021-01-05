@@ -1,0 +1,221 @@
+gst-droid (0.20201104.0+gemian) unstable; urgency=medium
+
+  * Branch for Gemian
+
+ -- Adam Boardman <adamboardman@gmail.com>  Mon, 4 Jan 2021 20:28:00 +0000
+ 
+gst-droid (0.20201104.0-1~ubports16.04.1build1) xenial; urgency=medium
+
+  * No-change rebuild after fixing CI.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Mon, 07 Dec 2020 16:02:48 +0700
+
+gst-droid (0.20201104.0-1~ubports16.04.1) xenial; urgency=medium
+
+  * Update source location for 0.20201104.0
+  * Drop 0115-droidmediabuffer-prevent-crash-from-NULL-mem-copy-.patch.
+    Applied upstream.
+  * Reduce frame available callback verbosity
+  * Remove the shared-library branch from Jenkinsfile
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Thu, 03 Dec 2020 22:33:59 +0700
+
+gst-droid (0.20201104.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    - [gst-droid] Fix regression in droidcamsrc crop rect initialization.
+    - [droidmediabuffer] prevent crash from NULL mem_copy.
+    - [gst-droid] Fix thread leak after recording.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Thu, 03 Dec 2020 21:00:24 +0700
+
+gst-droid (0.20200605.0-1~ubports16.04.2) xenial; urgency=medium
+
+  * Update 0107-droidcamsrc-dont-re-activate-mode-on-mode-switch-i.patch
+    - Update to match reviewed code on the PR. Also update reviewed status.
+  * Jenkinsfile: migrate to shared library approach
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Wed, 12 Aug 2020 01:05:26 +0700
+
+gst-droid (0.20200605.0-1~ubports16.04.1) xenial; urgency=medium
+
+  * Merge version 0.20200605.0 from Debian-PM
+  * Speed up camera initialization, by making preview res available earlier
+    - 0106-droidcamsrc-send-flush-stop-when-go-to-playing.patch
+    - 0107-droidcamsrc-dont-re-activate-mode-on-mode-switch-i.patch
+    - 0108-droidcamsrc-dont-fail-device-switch-while-running.patch
+    - 0109-droidcamsrc-make-sensor-orientation-readable-before-READY.patch
+    - 0110-droidcamsrc-notify-sensor-orientation-change-when-device-changed
+      .patch
+    - 0111-droidcamsrc-open-the-camera-at-ready-state.patch
+  * Reduce CPU usage by introducing buffer pool for raw buffers
+    - 0112-droidcamsrc-fix-pool-failure-in-raw-preview-mode.patch
+    - 0113-droidcamsrc-have-buffer-pool-for-raw-buffers.patch
+  * Update preview-image patch to match the PR as they're reviewed
+  * Make sure preview buffer is updated after video recording
+    - 0114-droidcamsrc-update-preview-flag-after-stop-video-r.patch
+  * Prevent crash when swhitching to video mode early
+    - 0115-droidmediabuffer-prevent-crash-from-NULL-mem-copy-.patch
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Wed, 29 Jul 2020 20:39:02 +0700
+
+gst-droid (0.20200605.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    - [camera] Fix wrong byte-order on ISO value in EXIF.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Wed, 15 Jul 2020 20:38:37 +0700
+
+gst-droid (0.20200422.0-1~ubports16.04.2) xenial; urgency=medium
+
+  * Fix configure failure due to debconf prompt not being shown.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Tue, 09 Jun 2020 16:28:47 +0700
+
+gst-droid (0.20200422.0-1~ubports16.04.1) xenial; urgency=medium
+
+  * Merge version 0.20200422.0-1 from Debian-PM
+  * Update source location for version 0.20200416.0
+  * Update 0101-fix-pkg-config-file-for-correct-android-header.patch
+    - Fix author's e-mail address.
+  * Refresh or update patches that don't apply
+    - 0102-implement-preview-image-message.patch
+    - 0104-droidcamsrc-call-take-picture-asynchronously.patch
+  * Polyfill g_ptr_array_find for GLib < 2.54
+    - 0201-polyfill-g_ptr_array_find-for-glib--2.54.patch
+  * Add debconf to remind people to upgrade Android images with droidmedia
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Mon, 08 Jun 2020 21:47:55 +0700
+
+gst-droid (0.20200422.0-1) unstable; urgency=medium
+
+  * New upstream release. Changes since last update includes:
+    - codec: Ignore AMR and AMR-WB codec data.
+    - Use the buffer pool proposed by droideglsink in camera and video
+      decoder.
+    - Fix regression in droid buffer memory alignment.
+  * d/control: add a version requirement for droidmedia and nemo-gst-interfaces.
+    This is due to added API required by newer versions of gst-droid.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Fri, 08 May 2020 02:58:31 +0700
+
+gst-droid (0.20191203.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Sun, 19 Jan 2020 18:36:08 +0100
+
+gst-droid (0.20190805.0-1~ubports16.04.7build1) xenial; urgency=medium
+
+  * No-change rebuild to pick-up the change in droidmedia.
+    - Makes gst-droid works on 64-bit system.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Thu, 06 Feb 2020 16:47:26 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.7) xenial; urgency=medium
+
+  * Fix setting focus point in the camera app
+    - d/p/0105-droidcamsrc-make-deferred-property-set-return-true.patch
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Sun, 19 Jan 2020 23:16:24 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.6) xenial; urgency=medium
+
+  * Update debian/patches/0102-implement-preview-image-message.patch
+    - Take the video format, width and height from GstVideoMeta that's been
+      added in _prepare_buffer.
+    - Make sure logging messages use lowercase at the beginning.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Mon, 28 Oct 2019 22:34:36 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.5) xenial; urgency=medium
+
+  * Update 0104-droidcamsrc-call-take-picture-asynchronously.patch
+    - Mark added _take_picture function as static because it's used only in
+      this funciton.
+  * Update debian/patches/0102-implement-preview-image-message.patch
+    - Make sure last preview buffer mutex is released if no preview buffer
+      is available within 1 second.
+    - Make preview posting works with video recording too.
+
+ -- Ratchanan Srirattanamet <ratchanan@ubports.com>  Tue, 15 Oct 2019 21:20:42 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.4) xenial; urgency=medium
+
+  * Update debian/patches/0102-implement-preview-image-message.patch
+    - Move variable initialisation to the correct place (in _new function)
+    - Run the file through gst-indent
+    - Clarifying comments based on new information
+  * Add a patch to fix deadlock when capture image with flash
+    - debian/patches/0104-droidcamsrc-call-take-picture-asynchronously.patch
+
+ -- Ratchanan Srirattanamet <peathot@hotmail.com>  Fri, 04 Oct 2019 20:25:46 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.3) xenial; urgency=medium
+
+  * Update debian/patches/0102-implement-preview-image-message.patch
+    - Don't update preview callback flag on mode change. It's guaranteed to
+    happen if preview is running while mode changes happens.
+    - Check if preview is running before setting flag. It doesn't make sense
+    to update flag if it doesn't, and we'll update flag when we start it
+    anyway. Because of this, flag update at start is done after preview has
+    actually been started.
+    - Update mutex unlock coding style.
+
+ -- Ratchanan Srirattanamet <peathot@hotmail.com>  Thu, 19 Sep 2019 00:33:50 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.2) xenial; urgency=medium
+
+  * droidcamsrc: implement preview-image message.
+    This is required so that Qt's imageCaptured signal works properly.
+    - d/patches/0102-implement-preview-image-message.patch
+    - d/patches/0103-allow-appsink-to-go-synchronously-to-playing.patch
+
+ -- Ratchanan Srirattanamet <peathot@hotmail.com>  Thu, 29 Aug 2019 23:38:16 +0700
+
+gst-droid (0.20190805.0-1~ubports16.04.1) xenial; urgency=medium
+
+  * Import to UBports
+  * Backport to xenial
+    - Reduce debhelper compatibility to 9
+    - Bring back dh_autoreconf build-dep because it's not automatically
+      included in debhelper 9.
+  * Fix pkg-config file for correct android-headers
+
+ -- Ratchanan Srirattanamet <peathot@hotmail.com>  Sat, 24 Aug 2019 20:26:14 +0700
+
+gst-droid (0.20190805.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Sun, 11 Aug 2019 00:19:23 +0200
+
+gst-droid (0.20190506.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Fri, 19 Jul 2019 21:07:48 +0200
+
+gst-droid (0.20181128.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Wed, 26 Dec 2018 19:17:41 +0100
+
+gst-droid (0.20181123.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Sat, 24 Nov 2018 01:55:26 +0100
+
+gst-droid (0.20180503.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonah Brüchert <jbb@kaidan.im>  Fri, 22 Jun 2018 22:12:14 +0000
+
+gst-droid (0.20171129.0-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Bhushan Shah <bshah@kde.org>  Fri, 15 Dec 2017 07:17:56 +0000

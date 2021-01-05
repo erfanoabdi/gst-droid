@@ -1,0 +1,7 @@
+Template: gst_droid/upgrade_droidmedia_to_20200424
+Type: note
+Description: Make sure Droidmedia in the Android image is up-to-date.
+ This version of Gstreamer-droid requires version 0.20200424.0 of Droidmedia
+ or higher. Please make sure to rebuild or upgrade the Android image to
+ contains the latest Droidmedia. For Halium-based Android, the required version
+ is merged on 8 June 2020.

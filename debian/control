@@ -1,0 +1,39 @@
+Source: gst-droid
+Priority: optional
+Maintainer: Adam Boardman <adamboardman@gmail.com>
+XSBC-Original-Maintainer: Bhushan Shah <bhush94@gmail.com>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               droidmedia (>= 0.20200416.0),
+               libexif-dev,
+               libgstreamer-plugins-bad1.0-dev,
+               libhybris-dev,
+               nemo-gstreamer1.0-interfaces-dev (>= 0.20200421.0)
+Standards-Version: 4.2.1
+Section: libs
+Homepage: https://github.com/sailfishos/gst-droid/
+Vcs-Git: https://gitlab.com/debian-pm/halium/gst-droid.git
+Vcs-Browser: https://gitlab.com/debian-pm/halium/gst-droid
+
+Package: gstreamer1.0-droid-dev
+Section: libdevel
+Architecture: any
+Depends: gstreamer1.0-droid (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: GStreamer droid plug-in.
+ GStreamer droid plug-in contains elements using the Android HAL.
+
+Package: gstreamer1.0-droid
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, debconf
+Description: GStreamer droid plug-in.
+ GStreamer droid plug-in contains elements using the Android HAL.
+
+Package: gstreamer1.0-droid-tools
+Architecture: any
+Depends: gstreamer1.0-droid (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: GStreamer droid plug-in.
+ GStreamer droid plug-in contains elements using the Android HAL.
