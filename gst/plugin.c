@@ -31,6 +31,7 @@
 #include "gstdroidvenc.h"
 #include "gstdroidadec.h"
 #include "gstdroidaenc.h"
+#include "gstgtkdroideglsink.h"
 #include "droidmedia.h"
 
 GST_DEBUG_CATEGORY (gst_droid_camsrc_debug);
@@ -71,12 +72,17 @@ plugin_init (GstPlugin * plugin)
   GST_DEBUG_CATEGORY_INIT (gst_droid_codec_debug, "droidcodec",
       0, "Android HAL codec");
 
+  GST_DEBUG_CATEGORY_INIT (gst_gtk_droidegl_sink_debug, "gtkdroideglsink",
+      0, "Android EGL GTK sink");
+
   ok &= gst_element_register (plugin, "droidcamsrc", GST_RANK_PRIMARY,
       GST_TYPE_DROIDCAMSRC);
   ok &= gst_element_register (plugin, "droideglsink", GST_RANK_PRIMARY,
       GST_TYPE_DROIDEGLSINK);
   ok &= gst_element_register (plugin, "droidvideotexturesink", GST_RANK_PRIMARY,
       GST_TYPE_DROIDVIDEOTEXTURESINK);
+  ok &= gst_element_register (plugin, "gtkdroideglsink", GST_RANK_PRIMARY,
+      GST_TYPE_GTK_DROIDEGL_SINK);
 
   ok &= gst_element_register (plugin, "droidvdec", GST_RANK_PRIMARY + 1,
       GST_TYPE_DROIDVDEC);

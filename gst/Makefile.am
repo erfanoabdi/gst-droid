@@ -1,6 +1,6 @@
 AM_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\"
 
-SUBDIRS = droideglsink droidcodec droidcamsrc
+SUBDIRS = droideglsink droidcodec droidcamsrc gtkdroideglsink
 
 plugin_LTLIBRARIES = libgstdroid.la
 
@@ -11,7 +11,8 @@ libgstdroid_la_CFLAGS = $(GST_CFLAGS) $(NGI_CFLAGS) $(EGL_CFLAGS) \
 			-I/usr/include/droidmedia/ \
                         -Idroidcamsrc/ \
                         -Idroideglsink/ \
-                        -Idroidcodec/
+                        -Idroidcodec/ \
+                        -Igtkdroideglsink/
 
 libgstdroid_la_LIBADD = $(GST_LIBS) $(NGI_LIBS) $(EGL_LIBS) \
                         $(NGM_LIBS) \
@@ -20,7 +21,8 @@ libgstdroid_la_LIBADD = $(GST_LIBS) $(NGI_LIBS) $(EGL_LIBS) \
                         -lgstphotography-1.0 \
                         droideglsink/libgstdroideglsink.la \
                         droidcamsrc/libgstdroidcamsrc.la \
-                        droidcodec/libgstdroidcodec.la
+                        droidcodec/libgstdroidcodec.la \
+                        gtkdroideglsink/libgstgtkdroideglsink.la
 
 libgstdroid_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
 
