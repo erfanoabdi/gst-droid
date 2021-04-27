@@ -6,5 +6,5 @@ libgstgtkdroideglsink_la_CFLAGS = $(GST_CFLAGS) $(NGI_CFLAGS) $(EGL_CFLAGS) \
 
 libgstgtkdroideglsink_la_LIBADD = $(GST_LIBS) $(NGI_LIBS) $(EGL_LIBS)
 
-libgstgtkdroideglsink_la_SOURCES = gstgtkdroideglsink.c
-noinst_HEADERS = gstgtkdroideglsink.h
+libgstgtkdroideglsink_la_SOURCES = gstgtkdroideglsink.c gtkgstbasewidget.c gstgtkbasesink.c gstgtkutils.c gtkgstglwidget.c
+noinst_HEADERS = gstgtkdroideglsink.h gstgtkbasesink.h gtkgstglwidget.h gstgtkutils.h gtkgstbasewidget.h
